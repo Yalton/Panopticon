@@ -1,0 +1,32 @@
+```mermaid
+flowchart TD
+    subgraph "Sensor Layer"
+        A1[Raspberry Pi 1] --> |MQTT| C
+        A2[Raspberry Pi 2] --> |MQTT| C
+        A3[Raspberry Pi n] --> |MQTT| C
+    end
+
+    subgraph "Cloud Layer"
+        C[AWS IoT Core] --> |MQTT Rules| D
+    end
+
+    subgraph "Local Kubernetes Cluster"
+        D[MQTT Bridge]
+        D --> |Insert Time Data| E[TimescaleDB]
+        D --> |Insert Geo Data| F[PostgreSQL + PostGIS]
+        E --> G[Grafana]
+        F --> G
+    end
+
+    classDef raspberry fill:#FF9999,stroke:#333,stroke-width:2px
+    classDef aws fill:#FF9900,stroke:#333,stroke-width:2px,color:white
+    classDef kubernetes fill:#326CE5,stroke:#333,stroke-width:2px,color:white
+    classDef database fill:#66B2FF,stroke:#333,stroke-width:2px
+    classDef visualization fill:#99CC00,stroke:#333,stroke-width:2px
+
+    class A1,A2,A3 raspberry
+    class C aws
+    class D,G kubernetes
+    class E,F database
+    class G visualization
+```
