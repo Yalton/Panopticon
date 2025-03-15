@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: timescaledb-init
+  namespace: iot-monitoring
+data:
+  init.sql: |
+    -- Create TimescaleDB extension first
+    CREATE EXTENSION IF NOT EXISTS timescaledb;
+
+    -- Then create the sensor_data table
+    CREATE TABLE IF NOT EXISTS sensor_data (
+      time TIMESTAMPTZ NOT NULL,
+      device_id TEXT,
+      sensor_type TEXT, -- 'temperature', 'humidity', or 'volume'
+      value DOUBLE PRECISION,
+      location_id TEXT
+    );
+
+    -- Create a hypertable for efficient time-series queries
+    SELECT create_hypertable('sensor_data', 'time', if_not_exists => TRUE);
+
+    -- Add index on device_id and sensor_type for faster queries
+    CREATE INDEX IF NOT EXISTS idx_sensor_data_device ON sensor_data(device_id);
+    CREATE INDEX IF NOT EXISTS idx_sensor_data_sensor_type ON sensor_data(sensor_type);

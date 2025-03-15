@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgis-init-scripts
+  namespace: iot-monitoring
+data:
+  init-postgis.sql: |
+    -- Create IoT database
+    CREATE DATABASE iot_geo_data;
+
+    -- Connect to the database
+    \c iot_geo_data;
+
+    -- Enable PostGIS extension
+    CREATE EXTENSION IF NOT EXISTS postgis;
+    CREATE EXTENSION IF NOT EXISTS postgis_topology;
+
+    -- Create table for sensor locations
+    CREATE TABLE sensor_locations (
+      sensor_id VARCHAR(50) PRIMARY KEY,
+      name VARCHAR(100),
+      description TEXT,
+      location GEOGRAPHY(POINT, 4326),  -- GEOGRAPHY type for storing GPS coordinates
+      installation_date TIMESTAMP WITH TIME ZONE,
+      status VARCHAR(20),
+      created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+    );
+
+    -- Create index on location for faster spatial queries
+    CREATE INDEX sensor_locations_gix ON sensor_locations USING GIST (location);
+
+    -- Create table for geo-fences (regions of interest)
+    CREATE TABLE geo_fences (
+      fence_id SERIAL PRIMARY KEY,
+      name VARCHAR(100),
+      description TEXT,
+      boundary GEOGRAPHY(POLYGON, 4326),  -- Polygon for defining boundaries
+      created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+      updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+    );
+
+    -- Create index on boundary
+    CREATE INDEX geo_fences_gix ON geo_fences USING GIST (boundary);
+
+    -- Create function to update timestamp
+    CREATE OR REPLACE FUNCTION update_modified_column()
+    RETURNS TRIGGER AS $$
+    BEGIN
+      NEW.updated_at = NOW();
+      RETURN NEW;
+    END;
+    $$ LANGUAGE plpgsql;
+
+    -- Create trigger for automatic timestamp update
+    CREATE TRIGGER update_geo_fences_timestamp
+    BEFORE UPDATE ON geo_fences
+    FOR EACH ROW
+    EXECUTE FUNCTION update_modified_column();
+
+    -- Grant privileges
+    GRANT ALL PRIVILEGES ON DATABASE iot_geo_data TO postgres;
+    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres;
+    GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO postgres;
