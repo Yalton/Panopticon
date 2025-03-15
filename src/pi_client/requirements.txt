@@ -1,0 +1,5 @@
+adafruit-circuitpython-bmp280
+adafruit-blinka
+paho-mqtt
+requests
+RPi.GPIO
