@@ -6,12 +6,12 @@ import time
 from paho.mqtt import client as mqtt_client
 
 class client:
+
+    #TODO: pull this from env file
     BROKER = 'mqtt.eclipseprojects.io'
     PORT = 1883#1883 8000
     TOPIC = "test/test"
-    # generate client ID with pub prefix randomly
     CLIENT_ID = f'TEST_PI_CLIENT'#f'python-mqtt-tls-pub-sub-{random.randint(0, 1000)}'
-
 
     #IDK ABOUT THESE leaving in for now
     FIRST_RECONNECT_DELAY = 1
@@ -27,8 +27,6 @@ class client:
         print("Broker: ", self.BROKER)
         print("Topic: ", self.TOPIC)
         print("=============================")
-
-
 
     #callback for on connect
     def on_connect(client, userdata, flags, rc):
@@ -80,16 +78,3 @@ class client:
                  print(f'Succsesfully sent `{payload}` to topic `{self.TOPIC}`')
         else:
              print(f'Failed to send message to topic {self.TOPIC}')
-
-
-
-    # def run():
-    #     logging.basicConfig(format='%(asctime)s - %(levelname)s: %(message)s',
-    #                         level=logging.DEBUG)
-    #     client = connect()
-    #     client.loop_start()
-    #     time.sleep(1)
-    #     if client.is_connected():
-    #         publish(client)
-    #     else:
-    #         client.loop_stop() 
