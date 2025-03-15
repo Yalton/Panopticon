@@ -7,6 +7,7 @@ data:
   config.yaml: |
     bridge:
       client_id: "k8s-mqtt-bridge"
+      mode: "development"  # Use "development" to generate test data instead of connecting to AWS
       aws:
         region: "${AWS_REGION}"
         endpoint: "${AWS_IOT_ENDPOINT}"
@@ -17,9 +18,29 @@ data:
     database:
       host: "timescaledb"
       port: 5432
-      name: "iot_data"
+      name: "sensor_data"
       user: "${DB_USER}"
       password: "${DB_PASSWORD}"
       
     logging:
-      level: "info"
+      level: "debug"
+      
+    # Development mode settings (only used when mode=development)
+    development:
+      generate_sample_data: true
+      sample_interval_seconds: 10
+      sample_sensors:
+        - id: "sensor001"
+          temperature_min: 18.0
+          temperature_max: 28.0
+          humidity_min: 30.0
+          humidity_max: 80.0
+          pressure_min: 980.0
+          pressure_max: 1020.0
+        - id: "sensor002"
+          temperature_min: 20.0
+          temperature_max: 25.0
+          humidity_min: 40.0
+          humidity_max: 70.0
+          pressure_min: 990.0
+          pressure_max: 1010.0

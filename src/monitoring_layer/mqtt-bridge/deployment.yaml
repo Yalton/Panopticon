@@ -1,10 +1,9 @@
+# mqtt-bridge/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mqtt-bridge
   namespace: iot-monitoring
-  labels:
-    app: mqtt-bridge
 spec:
   replicas: 1
   selector:
@@ -17,28 +16,18 @@ spec:
     spec:
       containers:
         - name: mqtt-bridge
-          image: your-registry/aws-iot-mqtt-bridge:latest # Replace with your image
-          imagePullPolicy: Always
+          image: mqtt-bridge:latest
+          imagePullPolicy: IfNotPresent
           env:
-            - name: AWS_IOT_ENDPOINT
-              valueFrom:
-                secretKeyRef:
-                  name: aws-iot-secrets
-                  key: endpoint
-            - name: AWS_REGION
-              valueFrom:
-                secretKeyRef:
-                  name: aws-iot-credentials
-                  key: aws-region
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: timescaledb-credentials
+                  name: aws-iot-credentials
                   key: username
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: timescaledb-credentials
+                  name: aws-iot-credentials
                   key: password
           volumeMounts:
             - name: config-volume
@@ -53,9 +42,13 @@ spec:
           secret:
             secretName: aws-iot-credentials
             items:
-              - key: iot-certificate.pem.crt
-                path: iot-certificate.pem.crt
-              - key: iot-private.pem.key
-                path: iot-private.pem.key
-              - key: root-CA.crt
-                path: root-CA.crt
+              - key: certificate.pem.crt
+                path: certificate.pem.crt
+              - key: private.pem.key
+                path: private.pem.key
+              - key: root-ca.crt
+                path: root-ca.crt
+              - key: username
+                path: username
+              - key: password
+                path: password

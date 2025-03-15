@@ -5,7 +5,10 @@ set -e
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
+PURPLE='\033[0;35m'
 NC='\033[0m' # No Color
+
+
 
 echo -e "${YELLOW}Starting IoT Monitoring Project K3s Setup${NC}"
 
@@ -70,8 +73,20 @@ kubectl get nodes
 
 echo -e "${GREEN}K3s setup complete! Your Kubernetes cluster is ready for the IoT Monitoring project.${NC}"
 
-echo -e "${YELLOW}Starting timescaledb"
+echo -e "${PURPLE}Starting timescaledb"
 kubectl apply -f timescaledb/
 
-echo -e "${YELLOW}Starting postgis"
+echo -e "${PURPLE}Starting postgis"
 kubectl apply -f postgis/
+
+# Add these lines before "Starting mqtt-bridge"
+echo -e "${PURPLE}Building and loading MQTT bridge image...${NC}"
+cd mqtt-bridge
+cd src
+docker build -t mqtt-bridge:latest .
+k3d image import mqtt-bridge:latest -c iot-cluster
+cd ..
+cd ..
+
+echo -e "${PURPLE}Starting mqtt-bridge"
+kubectl apply -f mqtt-bridge/

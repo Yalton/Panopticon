@@ -23,3 +23,9 @@
 ## Set up timescaledb
 
 `kubectl apply -f monitoring_layer/timescaledb/`
+
+## mqtt bridge
+
+`kubectl create secret generic timescaledb-credentials -n iot-monitoring \
+  --from-literal=username=postgres \
+  --from-literal=password=yourpassword`
