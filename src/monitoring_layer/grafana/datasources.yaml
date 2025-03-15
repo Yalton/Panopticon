@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: iot-monitoring
+data:
+  datasources.yaml: |-
+    apiVersion: 1
+    datasources:
+      - name: TimescaleDB
+        type: postgres
+        url: timescaledb:5432
+        database: postgres
+        user: postgres
+        secureJsonData:
+          password: "password"
+        jsonData:
+          sslmode: "disable"
+          timescaledb: true
+          postgresVersion: 1200
+      - name: PostGIS
+        type: postgres
+        url: postgis:5432
+        database: postgres
+        user: postgres
+        secureJsonData:
+          password: "password"
+        jsonData:
+          sslmode: "disable"
+          postgresVersion: 1200
