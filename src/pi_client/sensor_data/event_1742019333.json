@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-03-15 01:15:33",
+  "event": "motion_detected",
+  "location": {
+    "city": "Houston",
+    "region": "Texas",
+    "country": "US",
+    "loc": "29.7633,-95.3633"
+  },
+  "sensor_data": {
+    "temperature_c": 18.4,
+    "temperature_f": 65.2,
+    "pressure_hpa": 997.3,
+    "altitude_m": 133.6
+  }
+}

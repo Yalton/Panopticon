@@ -1,0 +1,162 @@
+2025-03-15 01:12:56,181 - INFO - Starting integrated sensor monitoring system...
+2025-03-15 01:12:56,337 - INFO - System location: {'city': 'Houston', 'region': 'Texas', 'country': 'US', 'loc': '29.7633,-95.3633'}
+2025-03-15 01:12:56,338 - INFO - ====Starting MQTT Client====
+2025-03-15 01:12:56,338 - INFO - Client ID: TEST_PI_CLIENT
+2025-03-15 01:12:56,338 - INFO - Broker: mqtt.eclipseprojects.io
+2025-03-15 01:12:56,338 - INFO - Topic: test/test
+2025-03-15 01:12:56,338 - INFO - ===========================
+2025-03-15 01:12:56,864 - INFO - Motion sensor initializing...
+2025-03-15 01:12:58,865 - INFO - All sensors ready!
+2025-03-15 01:13:04,040 - INFO - Temperature reading: {'temperature_c': 16.0, 'temperature_f': 61.0, 'pressure_hpa': 997.3, 'altitude_m': 133.26}
+2025-03-15 01:13:04,042 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:13:04,042 - ERROR - Unexpected error: name 'datetime' is not defined
+2025-03-15 01:13:04,043 - INFO - Disconnected from MQTT broker
+2025-03-15 01:13:04,044 - INFO - Cleanup completed, program exited
+2025-03-15 01:14:07,272 - INFO - Starting integrated sensor monitoring system...
+2025-03-15 01:14:07,422 - INFO - System location: {'city': 'Houston', 'region': 'Texas', 'country': 'US', 'loc': '29.7633,-95.3633'}
+2025-03-15 01:14:07,423 - INFO - ====Starting MQTT Client====
+2025-03-15 01:14:07,423 - INFO - Client ID: TEST_PI_CLIENT
+2025-03-15 01:14:07,424 - INFO - Broker: mqtt.eclipseprojects.io
+2025-03-15 01:14:07,424 - INFO - Topic: test/test
+2025-03-15 01:14:07,424 - INFO - ===========================
+2025-03-15 01:14:07,540 - INFO - Motion sensor initializing...
+2025-03-15 01:14:07,563 - INFO - Connected to MQTT Broker!
+2025-03-15 01:14:09,541 - INFO - All sensors ready!
+2025-03-15 01:14:14,714 - INFO - Temperature reading: {'temperature_c': 16.7, 'temperature_f': 62.3, 'pressure_hpa': 997.3, 'altitude_m': 133.52}
+2025-03-15 01:14:14,715 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:19,024 - INFO - Motion detected at 2025-03-15 01:14:19
+2025-03-15 01:14:19,185 - INFO - Motion triggered temperature reading: {'temperature_c': 16.8, 'temperature_f': 62.4, 'pressure_hpa': 997.3, 'altitude_m': 133.21}
+2025-03-15 01:14:19,185 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:19,949 - INFO - Temperature reading: {'temperature_c': 16.9, 'temperature_f': 62.5, 'pressure_hpa': 997.4, 'altitude_m': 133.18}
+2025-03-15 01:14:19,949 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:25,124 - INFO - Temperature reading: {'temperature_c': 17.0, 'temperature_f': 62.7, 'pressure_hpa': 997.4, 'altitude_m': 133.15}
+2025-03-15 01:14:25,125 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:30,295 - INFO - Temperature reading: {'temperature_c': 17.1, 'temperature_f': 62.9, 'pressure_hpa': 997.3, 'altitude_m': 133.56}
+2025-03-15 01:14:30,297 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:35,470 - INFO - Temperature reading: {'temperature_c': 17.2, 'temperature_f': 63.2, 'pressure_hpa': 997.3, 'altitude_m': 133.53}
+2025-03-15 01:14:35,471 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:40,643 - INFO - Temperature reading: {'temperature_c': 17.4, 'temperature_f': 63.4, 'pressure_hpa': 997.3, 'altitude_m': 133.74}
+2025-03-15 01:14:40,645 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:45,819 - INFO - Temperature reading: {'temperature_c': 17.5, 'temperature_f': 63.6, 'pressure_hpa': 997.3, 'altitude_m': 133.86}
+2025-03-15 01:14:45,821 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:50,992 - INFO - Temperature reading: {'temperature_c': 17.6, 'temperature_f': 63.8, 'pressure_hpa': 997.3, 'altitude_m': 133.37}
+2025-03-15 01:14:50,993 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:14:56,175 - INFO - Temperature reading: {'temperature_c': 17.7, 'temperature_f': 64.0, 'pressure_hpa': 997.3, 'altitude_m': 132.81}
+2025-03-15 01:14:56,176 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:01,349 - INFO - Temperature reading: {'temperature_c': 17.8, 'temperature_f': 64.2, 'pressure_hpa': 997.4, 'altitude_m': 133.18}
+2025-03-15 01:15:01,350 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:06,521 - INFO - Temperature reading: {'temperature_c': 17.9, 'temperature_f': 64.3, 'pressure_hpa': 997.3, 'altitude_m': 133.39}
+2025-03-15 01:15:06,522 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:11,698 - INFO - Temperature reading: {'temperature_c': 18.0, 'temperature_f': 64.5, 'pressure_hpa': 997.3, 'altitude_m': 133.28}
+2025-03-15 01:15:11,699 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:16,879 - INFO - Temperature reading: {'temperature_c': 18.1, 'temperature_f': 64.7, 'pressure_hpa': 997.3, 'altitude_m': 133.55}
+2025-03-15 01:15:16,880 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:22,052 - INFO - Temperature reading: {'temperature_c': 18.2, 'temperature_f': 64.8, 'pressure_hpa': 997.4, 'altitude_m': 133.29}
+2025-03-15 01:15:22,053 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:27,226 - INFO - Temperature reading: {'temperature_c': 18.2, 'temperature_f': 65.0, 'pressure_hpa': 997.3, 'altitude_m': 133.1}
+2025-03-15 01:15:27,228 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:32,403 - INFO - Temperature reading: {'temperature_c': 18.3, 'temperature_f': 65.1, 'pressure_hpa': 997.3, 'altitude_m': 133.61}
+2025-03-15 01:15:32,404 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:33,712 - INFO - Motion detected at 2025-03-15 01:15:33
+2025-03-15 01:15:33,876 - INFO - Motion triggered temperature reading: {'temperature_c': 18.4, 'temperature_f': 65.2, 'pressure_hpa': 997.3, 'altitude_m': 133.6}
+2025-03-15 01:15:33,877 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:37,644 - INFO - Temperature reading: {'temperature_c': 18.4, 'temperature_f': 65.3, 'pressure_hpa': 997.3, 'altitude_m': 133.28}
+2025-03-15 01:15:37,645 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:42,819 - INFO - Temperature reading: {'temperature_c': 18.5, 'temperature_f': 65.4, 'pressure_hpa': 997.3, 'altitude_m': 133.33}
+2025-03-15 01:15:42,820 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:48,001 - INFO - Temperature reading: {'temperature_c': 18.5, 'temperature_f': 65.5, 'pressure_hpa': 997.3, 'altitude_m': 133.46}
+2025-03-15 01:15:48,002 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:51,213 - INFO - Motion detected at 2025-03-15 01:15:51
+2025-03-15 01:15:51,380 - INFO - Motion triggered temperature reading: {'temperature_c': 18.6, 'temperature_f': 65.6, 'pressure_hpa': 997.3, 'altitude_m': 133.98}
+2025-03-15 01:15:51,381 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:53,245 - INFO - Temperature reading: {'temperature_c': 18.6, 'temperature_f': 65.6, 'pressure_hpa': 997.3, 'altitude_m': 133.56}
+2025-03-15 01:15:53,248 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:15:58,422 - INFO - Temperature reading: {'temperature_c': 18.7, 'temperature_f': 65.8, 'pressure_hpa': 997.3, 'altitude_m': 133.43}
+2025-03-15 01:15:58,424 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:03,603 - INFO - Temperature reading: {'temperature_c': 18.7, 'temperature_f': 65.9, 'pressure_hpa': 997.3, 'altitude_m': 133.48}
+2025-03-15 01:16:03,604 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:04,211 - INFO - Motion detected at 2025-03-15 01:16:04
+2025-03-15 01:16:04,378 - INFO - Motion triggered temperature reading: {'temperature_c': 18.8, 'temperature_f': 65.9, 'pressure_hpa': 997.3, 'altitude_m': 133.62}
+2025-03-15 01:16:04,379 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:08,854 - INFO - Temperature reading: {'temperature_c': 18.8, 'temperature_f': 66.0, 'pressure_hpa': 997.3, 'altitude_m': 133.56}
+2025-03-15 01:16:08,856 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:14,029 - INFO - Temperature reading: {'temperature_c': 18.9, 'temperature_f': 66.1, 'pressure_hpa': 997.3, 'altitude_m': 133.7}
+2025-03-15 01:16:14,029 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:14,233 - INFO - Motion detected at 2025-03-15 01:16:14
+2025-03-15 01:16:14,393 - INFO - Motion triggered temperature reading: {'temperature_c': 19.0, 'temperature_f': 66.2, 'pressure_hpa': 997.3, 'altitude_m': 133.36}
+2025-03-15 01:16:14,394 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:19,270 - INFO - Temperature reading: {'temperature_c': 19.0, 'temperature_f': 66.2, 'pressure_hpa': 997.3, 'altitude_m': 133.66}
+2025-03-15 01:16:19,271 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:24,452 - INFO - Temperature reading: {'temperature_c': 19.0, 'temperature_f': 66.3, 'pressure_hpa': 997.3, 'altitude_m': 133.8}
+2025-03-15 01:16:24,455 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:24,562 - INFO - Motion detected at 2025-03-15 01:16:24
+2025-03-15 01:16:24,729 - INFO - Motion triggered temperature reading: {'temperature_c': 19.1, 'temperature_f': 66.5, 'pressure_hpa': 997.3, 'altitude_m': 133.63}
+2025-03-15 01:16:24,730 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:29,705 - INFO - Temperature reading: {'temperature_c': 19.0, 'temperature_f': 66.4, 'pressure_hpa': 997.3, 'altitude_m': 133.55}
+2025-03-15 01:16:29,706 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:34,881 - INFO - Temperature reading: {'temperature_c': 19.0, 'temperature_f': 66.4, 'pressure_hpa': 997.3, 'altitude_m': 133.6}
+2025-03-15 01:16:34,882 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:16:35,955 - INFO - Program terminated by user
+2025-03-15 01:16:36,954 - INFO - Disconnected from MQTT broker
+2025-03-15 01:16:36,954 - INFO - Cleanup completed, program exited
+2025-03-15 01:24:12,305 - INFO - Starting integrated sensor monitoring system...
+2025-03-15 01:24:12,306 - INFO - ====Starting MQTT Client====
+2025-03-15 01:24:12,306 - INFO - Client ID: TEST_PI_CLIENT
+2025-03-15 01:24:12,306 - INFO - Broker: mqtt.eclipseprojects.io
+2025-03-15 01:24:12,306 - INFO - Topic: test/test
+2025-03-15 01:24:12,306 - INFO - ===========================
+2025-03-15 01:24:12,445 - INFO - Connected to MQTT Broker!
+2025-03-15 01:24:12,510 - INFO - System location: {'city': 'Houston', 'region': 'Texas', 'country': 'US', 'loc': '29.7633,-95.3633'}
+2025-03-15 01:24:12,555 - INFO - Temperature sensor initialized
+2025-03-15 01:24:12,556 - INFO - Motion sensor initializing...
+2025-03-15 01:24:14,556 - INFO - All sensors ready!
+2025-03-15 01:24:19,727 - INFO - Temperature reading: {'temperature_c': 20.2, 'temperature_f': 68.5, 'pressure_hpa': 997.2, 'altitude_m': 134.66}
+2025-03-15 01:24:19,734 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:24,805 - INFO - Temperature reading: {'temperature_c': 20.2, 'temperature_f': 68.5, 'pressure_hpa': 997.2, 'altitude_m': 134.42}
+2025-03-15 01:24:24,814 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:28,217 - INFO - Motion detected at 2025-03-15 01:24:28
+2025-03-15 01:24:28,378 - INFO - Motion triggered temperature reading: {'temperature_c': 20.2, 'temperature_f': 68.5, 'pressure_hpa': 997.2, 'altitude_m': 134.52}
+2025-03-15 01:24:28,379 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:29,841 - INFO - Temperature reading: {'temperature_c': 20.2, 'temperature_f': 68.6, 'pressure_hpa': 997.2, 'altitude_m': 134.24}
+2025-03-15 01:24:29,845 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:34,452 - INFO - Motion detected at 2025-03-15 01:24:34
+2025-03-15 01:24:34,619 - INFO - Motion triggered temperature reading: {'temperature_c': 20.3, 'temperature_f': 68.6, 'pressure_hpa': 997.2, 'altitude_m': 134.11}
+2025-03-15 01:24:34,621 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:34,888 - INFO - Temperature reading: {'temperature_c': 20.4, 'temperature_f': 68.7, 'pressure_hpa': 997.3, 'altitude_m': 134.03}
+2025-03-15 01:24:34,895 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:39,969 - INFO - Temperature reading: {'temperature_c': 20.3, 'temperature_f': 68.6, 'pressure_hpa': 997.2, 'altitude_m': 134.34}
+2025-03-15 01:24:39,977 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:42,480 - INFO - Motion detected at 2025-03-15 01:24:42
+2025-03-15 01:24:42,641 - INFO - Motion triggered temperature reading: {'temperature_c': 20.2, 'temperature_f': 68.5, 'pressure_hpa': 997.2, 'altitude_m': 134.41}
+2025-03-15 01:24:42,642 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:45,004 - INFO - Temperature reading: {'temperature_c': 20.2, 'temperature_f': 68.4, 'pressure_hpa': 997.2, 'altitude_m': 134.67}
+2025-03-15 01:24:45,009 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:50,084 - INFO - Temperature reading: {'temperature_c': 20.4, 'temperature_f': 68.8, 'pressure_hpa': 997.2, 'altitude_m': 134.81}
+2025-03-15 01:24:50,093 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:54,197 - INFO - Motion detected at 2025-03-15 01:24:54
+2025-03-15 01:24:54,358 - INFO - Motion triggered temperature reading: {'temperature_c': 20.7, 'temperature_f': 69.3, 'pressure_hpa': 997.1, 'altitude_m': 134.84}
+2025-03-15 01:24:54,359 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:24:55,121 - INFO - Temperature reading: {'temperature_c': 20.7, 'temperature_f': 69.4, 'pressure_hpa': 997.1, 'altitude_m': 134.85}
+2025-03-15 01:24:55,131 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:00,203 - INFO - Temperature reading: {'temperature_c': 20.9, 'temperature_f': 69.8, 'pressure_hpa': 997.2, 'altitude_m': 134.73}
+2025-03-15 01:25:00,207 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:05,275 - INFO - Temperature reading: {'temperature_c': 21.2, 'temperature_f': 70.3, 'pressure_hpa': 997.1, 'altitude_m': 134.88}
+2025-03-15 01:25:05,284 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:06,287 - INFO - Motion detected at 2025-03-15 01:25:06
+2025-03-15 01:25:06,454 - INFO - Motion triggered temperature reading: {'temperature_c': 21.3, 'temperature_f': 70.5, 'pressure_hpa': 997.1, 'altitude_m': 135.15}
+2025-03-15 01:25:06,455 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:10,327 - INFO - Temperature reading: {'temperature_c': 21.3, 'temperature_f': 70.5, 'pressure_hpa': 997.1, 'altitude_m': 135.15}
+2025-03-15 01:25:10,337 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:15,404 - INFO - Temperature reading: {'temperature_c': 21.2, 'temperature_f': 70.3, 'pressure_hpa': 997.1, 'altitude_m': 135.28}
+2025-03-15 01:25:15,409 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:18,212 - INFO - Motion detected at 2025-03-15 01:25:18
+2025-03-15 01:25:18,372 - INFO - Motion triggered temperature reading: {'temperature_c': 21.2, 'temperature_f': 70.2, 'pressure_hpa': 997.1, 'altitude_m': 135.03}
+2025-03-15 01:25:18,373 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:20,441 - INFO - Temperature reading: {'temperature_c': 21.1, 'temperature_f': 70.1, 'pressure_hpa': 997.1, 'altitude_m': 135.22}
+2025-03-15 01:25:20,450 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:25,522 - INFO - Temperature reading: {'temperature_c': 20.9, 'temperature_f': 69.8, 'pressure_hpa': 997.1, 'altitude_m': 135.18}
+2025-03-15 01:25:25,532 - INFO - Successfully sent message to topic test/test
+2025-03-15 01:25:27,522 - INFO - Program terminated by user
+2025-03-15 01:25:27,522 - INFO - GPIO resources cleaned up
+2025-03-15 01:25:27,602 - INFO - Disconnected from MQTT broker
+2025-03-15 01:25:27,603 - INFO - Cleanup completed, program exited
