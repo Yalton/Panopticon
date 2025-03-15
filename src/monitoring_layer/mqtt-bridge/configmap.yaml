@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mqtt-bridge-config
+  namespace: iot-monitoring
+data:
+  config.yaml: |
+    bridge:
+      client_id: "k8s-mqtt-bridge"
+      aws:
+        region: "${AWS_REGION}"
+        endpoint: "${AWS_IOT_ENDPOINT}"
+      topics:
+        - "sensors/+/data"
+        - "sensors/+/status"
+      
+    database:
+      host: "timescaledb"
+      port: 5432
+      name: "iot_data"
+      user: "${DB_USER}"
+      password: "${DB_PASSWORD}"
+      
+    logging:
+      level: "info"
