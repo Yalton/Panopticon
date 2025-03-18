@@ -1,13 +1,28 @@
 import json
 import logging
+from dotenv import load_dotenv
+import os
 from paho.mqtt import client as mqtt_client
 
+
 class MQTTClient:
-    def __init__(self, broker='mqtt.eclipseprojects.io', port=1883, topic="test/test", client_id='TEST_PI_CLIENT'):
-        self.BROKER = broker
+    def __init__(self, broker='mqtt.eclipseprojects.io', port=8883, topic="test/test", client_id='TEST_PI_CLIENT'):
+        
+        #TODO: read in from env 
+        load_dotenv()
+        
+        self.BROKER = os.getenv("BROKER")
         self.PORT = port
         self.TOPIC = topic
-        self.CLIENT_ID = client_id
+        self.CLIENT_ID = os.getenv("CLIENTID")
+
+        self.ca_cert_path = os.getenv("CA_CERT")
+        self.client_cert_path = os.getenv("CLIENT_CERT")
+        self.client_priv_key_path = os.getenv("CLIENT_PRIV_KEY")
+
+        print(self.ca_cert_path)
+        print(self.client_cert_path)
+        print(self.client_priv_key_path)
         
         logging.info("====Starting MQTT Client====")
         logging.info(f"Client ID: {self.CLIENT_ID}")
@@ -18,16 +33,31 @@ class MQTTClient:
         self.client = None
     
     def on_connect(self, client, userdata, flags, rc, properties=None):
-        if rc == 0 and client.is_connected():
-            logging.info("Connected to MQTT Broker!")
-        else:
-            logging.error(f'Failed to connect to MQTT broker, return code {rc}')
+        logging.info("Connected to MQTT Broker!")
+        self.client.subscribe(self.TOPIC)
+       
+
+    def on_message(self,client, userdata, msg):
+        print(msg.payload)
+        logging.info('received message: topic: %s payload: %s', msg.topic, msg.payload)
+        #additonal logic for on message behavior here 
     
     def connect(self):
-        self.client = mqtt_client.Client(mqtt_client.CallbackAPIVersion.VERSION2, client_id=self.CLIENT_ID)
+
+        #TODO: refactor to work with aws deployment
+
+        self.client = mqtt_client.Client(mqtt_client.CallbackAPIVersion.VERSION2, protocol=mqtt_client.MQTTv5, client_id=self.CLIENT_ID)
+        self.client.tls_set(
+            ca_certs=self.ca_cert_path,
+            certfile=self.client_cert_path,
+            keyfile=self.client_priv_key_path,
+            tls_version=2)
         self.client.on_connect = self.on_connect
+        self.client.on_message = self.on_message
+      
         try:
             self.client.connect(self.BROKER, self.PORT, keepalive=120)
+            print(self.client)
             self.client.loop_start()
             return True
         except Exception as e:
@@ -36,7 +66,7 @@ class MQTTClient:
     
     def send(self, payload):
         if not self.client or not self.client.is_connected():
-            logging.error("MQTT client is not connected!")
+            logging.error("INSIDE SEND MQTT client is not connected!")
             return False
         
         try:

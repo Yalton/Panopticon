@@ -40,7 +40,7 @@ git clone https://github.com/yourusername/sensor-monitoring.git
 cd sensor-monitoring
 ```
 
-*Note: Replace the GitHub URL with your actual repository URL.*
+_Note: Replace the GitHub URL with your actual repository URL._
 
 ### 4. Create a Virtual Environment
 
@@ -114,7 +114,7 @@ RestartSec=5s
 WantedBy=multi-user.target
 ```
 
-*Note: Update paths as necessary based on your installation location.*
+_Note: Update paths as necessary based on your installation location._
 
 Enable and start the service:
 
@@ -130,21 +130,35 @@ Check service status:
 sudo systemctl status sensor-monitor.service
 ```
 
+## Testing
+
+To test simply run
+
+```
+python testBroker.py
+```
+
+View on AWS IOT Core test client page. The script publishes and subscribes to a topic and will send/print messages accordingly
+
 ## Troubleshooting
 
 ### I2C Issues
+
 - If your BMP280 sensor is not detected, check your wiring connections.
 - Ensure the I2C interface is enabled in `raspi-config`.
 
 ### GPIO Issues
+
 - If the PIR sensor does not trigger, verify your wiring connections.
 - Check that your user has permission to access GPIO pins.
 
 ### Python Environment Issues
+
 - If you encounter Python import errors, ensure you're running within the activated virtual environment.
 - Verify all dependencies are installed correctly with `pip list`.
 
 ### MQTT Issues
+
 - If MQTT messages aren't being sent, check your broker connection details.
 - Verify network connectivity to your MQTT broker.
 
